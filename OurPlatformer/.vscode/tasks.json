@@ -1,0 +1,707 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "OurPlatformer Win64 Debug Build",
+			"group": "build",
+			"command": "Engine\\Build\\BatchFiles\\Build.bat",
+			"args": [
+				"OurPlatformer",
+				"Win64",
+				"Debug",
+				"G:\\Gaming Apps\\Unreal Engine\\Projects\\3DPlatformer\\OurPlatformer\\OurPlatformer.uproject",
+				"-waitmutex"
+			],
+			"problemMatcher": "$msCompile",
+			"type": "shell",
+			"options": {
+				"cwd": "G:\\Gaming Apps\\Unreal Engine\\UE_5.2"
+			}
+		},
+		{
+			"label": "OurPlatformer Win64 Debug Rebuild",
+			"group": "build",
+			"command": "Engine\\Build\\BatchFiles\\Build.bat",
+			"args": [
+				"OurPlatformer",
+				"Win64",
+				"Debug",
+				"G:\\Gaming Apps\\Unreal Engine\\Projects\\3DPlatformer\\OurPlatformer\\OurPlatformer.uproject",
+				"-waitmutex"
+			],
+			"problemMatcher": "$msCompile",
+			"dependsOn": [
+				"OurPlatformer Win64 Debug Clean"
+			],
+			"type": "shell",
+			"options": {
+				"cwd": "G:\\Gaming Apps\\Unreal Engine\\UE_5.2"
+			}
+		},
+		{
+			"label": "OurPlatformer Win64 Debug Clean",
+			"group": "build",
+			"command": "Engine\\Build\\BatchFiles\\Clean.bat",
+			"args": [
+				"OurPlatformer",
+				"Win64",
+				"Debug",
+				"G:\\Gaming Apps\\Unreal Engine\\Projects\\3DPlatformer\\OurPlatformer\\OurPlatformer.uproject",
+				"-waitmutex"
+			],
+			"problemMatcher": "$msCompile",
+			"type": "shell",
+			"options": {
+				"cwd": "G:\\Gaming Apps\\Unreal Engine\\UE_5.2"
+			}
+		},
+		{
+			"label": "OurPlatformer Win64 DebugGame Build",
+			"group": "build",
+			"command": "Engine\\Build\\BatchFiles\\Build.bat",
+			"args": [
+				"OurPlatformer",
+				"Win64",
+				"DebugGame",
+				"G:\\Gaming Apps\\Unreal Engine\\Projects\\3DPlatformer\\OurPlatformer\\OurPlatformer.uproject",
+				"-waitmutex"
+			],
+			"problemMatcher": "$msCompile",
+			"type": "shell",
+			"options": {
+				"cwd": "G:\\Gaming Apps\\Unreal Engine\\UE_5.2"
+			}
+		},
+		{
+			"label": "OurPlatformer Win64 DebugGame Rebuild",
+			"group": "build",
+			"command": "Engine\\Build\\BatchFiles\\Build.bat",
+			"args": [
+				"OurPlatformer",
+				"Win64",
+				"DebugGame",
+				"G:\\Gaming Apps\\Unreal Engine\\Projects\\3DPlatformer\\OurPlatformer\\OurPlatformer.uproject",
+				"-waitmutex"
+			],
+			"problemMatcher": "$msCompile",
+			"dependsOn": [
+				"OurPlatformer Win64 DebugGame Clean"
+			],
+			"type": "shell",
+			"options": {
+				"cwd": "G:\\Gaming Apps\\Unreal Engine\\UE_5.2"
+			}
+		},
+		{
+			"label": "OurPlatformer Win64 DebugGame Clean",
+			"group": "build",
+			"command": "Engine\\Build\\BatchFiles\\Clean.bat",
+			"args": [
+				"OurPlatformer",
+				"Win64",
+				"DebugGame",
+				"G:\\Gaming Apps\\Unreal Engine\\Projects\\3DPlatformer\\OurPlatformer\\OurPlatformer.uproject",
+				"-waitmutex"
+			],
+			"problemMatcher": "$msCompile",
+			"type": "shell",
+			"options": {
+				"cwd": "G:\\Gaming Apps\\Unreal Engine\\UE_5.2"
+			}
+		},
+		{
+			"label": "OurPlatformer Win64 Development Build",
+			"group": "build",
+			"command": "Engine\\Build\\BatchFiles\\Build.bat",
+			"args": [
+				"OurPlatformer",
+				"Win64",
+				"Development",
+				"G:\\Gaming Apps\\Unreal Engine\\Projects\\3DPlatformer\\OurPlatformer\\OurPlatformer.uproject",
+				"-waitmutex"
+			],
+			"problemMatcher": "$msCompile",
+			"type": "shell",
+			"options": {
+				"cwd": "G:\\Gaming Apps\\Unreal Engine\\UE_5.2"
+			}
+		},
+		{
+			"label": "OurPlatformer Win64 Development Rebuild",
+			"group": "build",
+			"command": "Engine\\Build\\BatchFiles\\Build.bat",
+			"args": [
+				"OurPlatformer",
+				"Win64",
+				"Development",
+				"G:\\Gaming Apps\\Unreal Engine\\Projects\\3DPlatformer\\OurPlatformer\\OurPlatformer.uproject",
+				"-waitmutex"
+			],
+			"problemMatcher": "$msCompile",
+			"dependsOn": [
+				"OurPlatformer Win64 Development Clean"
+			],
+			"type": "shell",
+			"options": {
+				"cwd": "G:\\Gaming Apps\\Unreal Engine\\UE_5.2"
+			}
+		},
+		{
+			"label": "OurPlatformer Win64 Development Clean",
+			"group": "build",
+			"command": "Engine\\Build\\BatchFiles\\Clean.bat",
+			"args": [
+				"OurPlatformer",
+				"Win64",
+				"Development",
+				"G:\\Gaming Apps\\Unreal Engine\\Projects\\3DPlatformer\\OurPlatformer\\OurPlatformer.uproject",
+				"-waitmutex"
+			],
+			"problemMatcher": "$msCompile",
+			"type": "shell",
+			"options": {
+				"cwd": "G:\\Gaming Apps\\Unreal Engine\\UE_5.2"
+			}
+		},
+		{
+			"label": "OurPlatformer Win64 Test Build",
+			"group": "build",
+			"command": "Engine\\Build\\BatchFiles\\Build.bat",
+			"args": [
+				"OurPlatformer",
+				"Win64",
+				"Test",
+				"G:\\Gaming Apps\\Unreal Engine\\Projects\\3DPlatformer\\OurPlatformer\\OurPlatformer.uproject",
+				"-waitmutex"
+			],
+			"problemMatcher": "$msCompile",
+			"type": "shell",
+			"options": {
+				"cwd": "G:\\Gaming Apps\\Unreal Engine\\UE_5.2"
+			}
+		},
+		{
+			"label": "OurPlatformer Win64 Test Rebuild",
+			"group": "build",
+			"command": "Engine\\Build\\BatchFiles\\Build.bat",
+			"args": [
+				"OurPlatformer",
+				"Win64",
+				"Test",
+				"G:\\Gaming Apps\\Unreal Engine\\Projects\\3DPlatformer\\OurPlatformer\\OurPlatformer.uproject",
+				"-waitmutex"
+			],
+			"problemMatcher": "$msCompile",
+			"dependsOn": [
+				"OurPlatformer Win64 Test Clean"
+			],
+			"type": "shell",
+			"options": {
+				"cwd": "G:\\Gaming Apps\\Unreal Engine\\UE_5.2"
+			}
+		},
+		{
+			"label": "OurPlatformer Win64 Test Clean",
+			"group": "build",
+			"command": "Engine\\Build\\BatchFiles\\Clean.bat",
+			"args": [
+				"OurPlatformer",
+				"Win64",
+				"Test",
+				"G:\\Gaming Apps\\Unreal Engine\\Projects\\3DPlatformer\\OurPlatformer\\OurPlatformer.uproject",
+				"-waitmutex"
+			],
+			"problemMatcher": "$msCompile",
+			"type": "shell",
+			"options": {
+				"cwd": "G:\\Gaming Apps\\Unreal Engine\\UE_5.2"
+			}
+		},
+		{
+			"label": "OurPlatformer Win64 Shipping Build",
+			"group": "build",
+			"command": "Engine\\Build\\BatchFiles\\Build.bat",
+			"args": [
+				"OurPlatformer",
+				"Win64",
+				"Shipping",
+				"G:\\Gaming Apps\\Unreal Engine\\Projects\\3DPlatformer\\OurPlatformer\\OurPlatformer.uproject",
+				"-waitmutex"
+			],
+			"problemMatcher": "$msCompile",
+			"type": "shell",
+			"options": {
+				"cwd": "G:\\Gaming Apps\\Unreal Engine\\UE_5.2"
+			}
+		},
+		{
+			"label": "OurPlatformer Win64 Shipping Rebuild",
+			"group": "build",
+			"command": "Engine\\Build\\BatchFiles\\Build.bat",
+			"args": [
+				"OurPlatformer",
+				"Win64",
+				"Shipping",
+				"G:\\Gaming Apps\\Unreal Engine\\Projects\\3DPlatformer\\OurPlatformer\\OurPlatformer.uproject",
+				"-waitmutex"
+			],
+			"problemMatcher": "$msCompile",
+			"dependsOn": [
+				"OurPlatformer Win64 Shipping Clean"
+			],
+			"type": "shell",
+			"options": {
+				"cwd": "G:\\Gaming Apps\\Unreal Engine\\UE_5.2"
+			}
+		},
+		{
+			"label": "OurPlatformer Win64 Shipping Clean",
+			"group": "build",
+			"command": "Engine\\Build\\BatchFiles\\Clean.bat",
+			"args": [
+				"OurPlatformer",
+				"Win64",
+				"Shipping",
+				"G:\\Gaming Apps\\Unreal Engine\\Projects\\3DPlatformer\\OurPlatformer\\OurPlatformer.uproject",
+				"-waitmutex"
+			],
+			"problemMatcher": "$msCompile",
+			"type": "shell",
+			"options": {
+				"cwd": "G:\\Gaming Apps\\Unreal Engine\\UE_5.2"
+			}
+		},
+		{
+			"label": "OurPlatformer IOS Debug Build",
+			"group": "build",
+			"command": "Engine\\Build\\BatchFiles\\Build.bat",
+			"args": [
+				"OurPlatformer",
+				"IOS",
+				"Debug",
+				"G:\\Gaming Apps\\Unreal Engine\\Projects\\3DPlatformer\\OurPlatformer\\OurPlatformer.uproject",
+				"-waitmutex"
+			],
+			"problemMatcher": "$msCompile",
+			"type": "shell",
+			"options": {
+				"cwd": "G:\\Gaming Apps\\Unreal Engine\\UE_5.2"
+			}
+		},
+		{
+			"label": "OurPlatformer IOS Debug Rebuild",
+			"group": "build",
+			"command": "Engine\\Build\\BatchFiles\\Build.bat",
+			"args": [
+				"OurPlatformer",
+				"IOS",
+				"Debug",
+				"G:\\Gaming Apps\\Unreal Engine\\Projects\\3DPlatformer\\OurPlatformer\\OurPlatformer.uproject",
+				"-waitmutex"
+			],
+			"problemMatcher": "$msCompile",
+			"dependsOn": [
+				"OurPlatformer IOS Debug Clean"
+			],
+			"type": "shell",
+			"options": {
+				"cwd": "G:\\Gaming Apps\\Unreal Engine\\UE_5.2"
+			}
+		},
+		{
+			"label": "OurPlatformer IOS Debug Clean",
+			"group": "build",
+			"command": "Engine\\Build\\BatchFiles\\Clean.bat",
+			"args": [
+				"OurPlatformer",
+				"IOS",
+				"Debug",
+				"G:\\Gaming Apps\\Unreal Engine\\Projects\\3DPlatformer\\OurPlatformer\\OurPlatformer.uproject",
+				"-waitmutex"
+			],
+			"problemMatcher": "$msCompile",
+			"type": "shell",
+			"options": {
+				"cwd": "G:\\Gaming Apps\\Unreal Engine\\UE_5.2"
+			}
+		},
+		{
+			"label": "OurPlatformer IOS DebugGame Build",
+			"group": "build",
+			"command": "Engine\\Build\\BatchFiles\\Build.bat",
+			"args": [
+				"OurPlatformer",
+				"IOS",
+				"DebugGame",
+				"G:\\Gaming Apps\\Unreal Engine\\Projects\\3DPlatformer\\OurPlatformer\\OurPlatformer.uproject",
+				"-waitmutex"
+			],
+			"problemMatcher": "$msCompile",
+			"type": "shell",
+			"options": {
+				"cwd": "G:\\Gaming Apps\\Unreal Engine\\UE_5.2"
+			}
+		},
+		{
+			"label": "OurPlatformer IOS DebugGame Rebuild",
+			"group": "build",
+			"command": "Engine\\Build\\BatchFiles\\Build.bat",
+			"args": [
+				"OurPlatformer",
+				"IOS",
+				"DebugGame",
+				"G:\\Gaming Apps\\Unreal Engine\\Projects\\3DPlatformer\\OurPlatformer\\OurPlatformer.uproject",
+				"-waitmutex"
+			],
+			"problemMatcher": "$msCompile",
+			"dependsOn": [
+				"OurPlatformer IOS DebugGame Clean"
+			],
+			"type": "shell",
+			"options": {
+				"cwd": "G:\\Gaming Apps\\Unreal Engine\\UE_5.2"
+			}
+		},
+		{
+			"label": "OurPlatformer IOS DebugGame Clean",
+			"group": "build",
+			"command": "Engine\\Build\\BatchFiles\\Clean.bat",
+			"args": [
+				"OurPlatformer",
+				"IOS",
+				"DebugGame",
+				"G:\\Gaming Apps\\Unreal Engine\\Projects\\3DPlatformer\\OurPlatformer\\OurPlatformer.uproject",
+				"-waitmutex"
+			],
+			"problemMatcher": "$msCompile",
+			"type": "shell",
+			"options": {
+				"cwd": "G:\\Gaming Apps\\Unreal Engine\\UE_5.2"
+			}
+		},
+		{
+			"label": "OurPlatformer IOS Development Build",
+			"group": "build",
+			"command": "Engine\\Build\\BatchFiles\\Build.bat",
+			"args": [
+				"OurPlatformer",
+				"IOS",
+				"Development",
+				"G:\\Gaming Apps\\Unreal Engine\\Projects\\3DPlatformer\\OurPlatformer\\OurPlatformer.uproject",
+				"-waitmutex"
+			],
+			"problemMatcher": "$msCompile",
+			"type": "shell",
+			"options": {
+				"cwd": "G:\\Gaming Apps\\Unreal Engine\\UE_5.2"
+			}
+		},
+		{
+			"label": "OurPlatformer IOS Development Rebuild",
+			"group": "build",
+			"command": "Engine\\Build\\BatchFiles\\Build.bat",
+			"args": [
+				"OurPlatformer",
+				"IOS",
+				"Development",
+				"G:\\Gaming Apps\\Unreal Engine\\Projects\\3DPlatformer\\OurPlatformer\\OurPlatformer.uproject",
+				"-waitmutex"
+			],
+			"problemMatcher": "$msCompile",
+			"dependsOn": [
+				"OurPlatformer IOS Development Clean"
+			],
+			"type": "shell",
+			"options": {
+				"cwd": "G:\\Gaming Apps\\Unreal Engine\\UE_5.2"
+			}
+		},
+		{
+			"label": "OurPlatformer IOS Development Clean",
+			"group": "build",
+			"command": "Engine\\Build\\BatchFiles\\Clean.bat",
+			"args": [
+				"OurPlatformer",
+				"IOS",
+				"Development",
+				"G:\\Gaming Apps\\Unreal Engine\\Projects\\3DPlatformer\\OurPlatformer\\OurPlatformer.uproject",
+				"-waitmutex"
+			],
+			"problemMatcher": "$msCompile",
+			"type": "shell",
+			"options": {
+				"cwd": "G:\\Gaming Apps\\Unreal Engine\\UE_5.2"
+			}
+		},
+		{
+			"label": "OurPlatformer IOS Test Build",
+			"group": "build",
+			"command": "Engine\\Build\\BatchFiles\\Build.bat",
+			"args": [
+				"OurPlatformer",
+				"IOS",
+				"Test",
+				"G:\\Gaming Apps\\Unreal Engine\\Projects\\3DPlatformer\\OurPlatformer\\OurPlatformer.uproject",
+				"-waitmutex"
+			],
+			"problemMatcher": "$msCompile",
+			"type": "shell",
+			"options": {
+				"cwd": "G:\\Gaming Apps\\Unreal Engine\\UE_5.2"
+			}
+		},
+		{
+			"label": "OurPlatformer IOS Test Rebuild",
+			"group": "build",
+			"command": "Engine\\Build\\BatchFiles\\Build.bat",
+			"args": [
+				"OurPlatformer",
+				"IOS",
+				"Test",
+				"G:\\Gaming Apps\\Unreal Engine\\Projects\\3DPlatformer\\OurPlatformer\\OurPlatformer.uproject",
+				"-waitmutex"
+			],
+			"problemMatcher": "$msCompile",
+			"dependsOn": [
+				"OurPlatformer IOS Test Clean"
+			],
+			"type": "shell",
+			"options": {
+				"cwd": "G:\\Gaming Apps\\Unreal Engine\\UE_5.2"
+			}
+		},
+		{
+			"label": "OurPlatformer IOS Test Clean",
+			"group": "build",
+			"command": "Engine\\Build\\BatchFiles\\Clean.bat",
+			"args": [
+				"OurPlatformer",
+				"IOS",
+				"Test",
+				"G:\\Gaming Apps\\Unreal Engine\\Projects\\3DPlatformer\\OurPlatformer\\OurPlatformer.uproject",
+				"-waitmutex"
+			],
+			"problemMatcher": "$msCompile",
+			"type": "shell",
+			"options": {
+				"cwd": "G:\\Gaming Apps\\Unreal Engine\\UE_5.2"
+			}
+		},
+		{
+			"label": "OurPlatformer IOS Shipping Build",
+			"group": "build",
+			"command": "Engine\\Build\\BatchFiles\\Build.bat",
+			"args": [
+				"OurPlatformer",
+				"IOS",
+				"Shipping",
+				"G:\\Gaming Apps\\Unreal Engine\\Projects\\3DPlatformer\\OurPlatformer\\OurPlatformer.uproject",
+				"-waitmutex"
+			],
+			"problemMatcher": "$msCompile",
+			"type": "shell",
+			"options": {
+				"cwd": "G:\\Gaming Apps\\Unreal Engine\\UE_5.2"
+			}
+		},
+		{
+			"label": "OurPlatformer IOS Shipping Rebuild",
+			"group": "build",
+			"command": "Engine\\Build\\BatchFiles\\Build.bat",
+			"args": [
+				"OurPlatformer",
+				"IOS",
+				"Shipping",
+				"G:\\Gaming Apps\\Unreal Engine\\Projects\\3DPlatformer\\OurPlatformer\\OurPlatformer.uproject",
+				"-waitmutex"
+			],
+			"problemMatcher": "$msCompile",
+			"dependsOn": [
+				"OurPlatformer IOS Shipping Clean"
+			],
+			"type": "shell",
+			"options": {
+				"cwd": "G:\\Gaming Apps\\Unreal Engine\\UE_5.2"
+			}
+		},
+		{
+			"label": "OurPlatformer IOS Shipping Clean",
+			"group": "build",
+			"command": "Engine\\Build\\BatchFiles\\Clean.bat",
+			"args": [
+				"OurPlatformer",
+				"IOS",
+				"Shipping",
+				"G:\\Gaming Apps\\Unreal Engine\\Projects\\3DPlatformer\\OurPlatformer\\OurPlatformer.uproject",
+				"-waitmutex"
+			],
+			"problemMatcher": "$msCompile",
+			"type": "shell",
+			"options": {
+				"cwd": "G:\\Gaming Apps\\Unreal Engine\\UE_5.2"
+			}
+		},
+		{
+			"label": "OurPlatformerEditor Win64 Debug Build",
+			"group": "build",
+			"command": "Engine\\Build\\BatchFiles\\Build.bat",
+			"args": [
+				"OurPlatformerEditor",
+				"Win64",
+				"Debug",
+				"G:\\Gaming Apps\\Unreal Engine\\Projects\\3DPlatformer\\OurPlatformer\\OurPlatformer.uproject",
+				"-waitmutex"
+			],
+			"problemMatcher": "$msCompile",
+			"type": "shell",
+			"options": {
+				"cwd": "G:\\Gaming Apps\\Unreal Engine\\UE_5.2"
+			}
+		},
+		{
+			"label": "OurPlatformerEditor Win64 Debug Rebuild",
+			"group": "build",
+			"command": "Engine\\Build\\BatchFiles\\Build.bat",
+			"args": [
+				"OurPlatformerEditor",
+				"Win64",
+				"Debug",
+				"G:\\Gaming Apps\\Unreal Engine\\Projects\\3DPlatformer\\OurPlatformer\\OurPlatformer.uproject",
+				"-waitmutex"
+			],
+			"problemMatcher": "$msCompile",
+			"dependsOn": [
+				"OurPlatformerEditor Win64 Debug Clean"
+			],
+			"type": "shell",
+			"options": {
+				"cwd": "G:\\Gaming Apps\\Unreal Engine\\UE_5.2"
+			}
+		},
+		{
+			"label": "OurPlatformerEditor Win64 Debug Clean",
+			"group": "build",
+			"command": "Engine\\Build\\BatchFiles\\Clean.bat",
+			"args": [
+				"OurPlatformerEditor",
+				"Win64",
+				"Debug",
+				"G:\\Gaming Apps\\Unreal Engine\\Projects\\3DPlatformer\\OurPlatformer\\OurPlatformer.uproject",
+				"-waitmutex"
+			],
+			"problemMatcher": "$msCompile",
+			"type": "shell",
+			"options": {
+				"cwd": "G:\\Gaming Apps\\Unreal Engine\\UE_5.2"
+			}
+		},
+		{
+			"label": "OurPlatformerEditor Win64 DebugGame Build",
+			"group": "build",
+			"command": "Engine\\Build\\BatchFiles\\Build.bat",
+			"args": [
+				"OurPlatformerEditor",
+				"Win64",
+				"DebugGame",
+				"G:\\Gaming Apps\\Unreal Engine\\Projects\\3DPlatformer\\OurPlatformer\\OurPlatformer.uproject",
+				"-waitmutex"
+			],
+			"problemMatcher": "$msCompile",
+			"type": "shell",
+			"options": {
+				"cwd": "G:\\Gaming Apps\\Unreal Engine\\UE_5.2"
+			}
+		},
+		{
+			"label": "OurPlatformerEditor Win64 DebugGame Rebuild",
+			"group": "build",
+			"command": "Engine\\Build\\BatchFiles\\Build.bat",
+			"args": [
+				"OurPlatformerEditor",
+				"Win64",
+				"DebugGame",
+				"G:\\Gaming Apps\\Unreal Engine\\Projects\\3DPlatformer\\OurPlatformer\\OurPlatformer.uproject",
+				"-waitmutex"
+			],
+			"problemMatcher": "$msCompile",
+			"dependsOn": [
+				"OurPlatformerEditor Win64 DebugGame Clean"
+			],
+			"type": "shell",
+			"options": {
+				"cwd": "G:\\Gaming Apps\\Unreal Engine\\UE_5.2"
+			}
+		},
+		{
+			"label": "OurPlatformerEditor Win64 DebugGame Clean",
+			"group": "build",
+			"command": "Engine\\Build\\BatchFiles\\Clean.bat",
+			"args": [
+				"OurPlatformerEditor",
+				"Win64",
+				"DebugGame",
+				"G:\\Gaming Apps\\Unreal Engine\\Projects\\3DPlatformer\\OurPlatformer\\OurPlatformer.uproject",
+				"-waitmutex"
+			],
+			"problemMatcher": "$msCompile",
+			"type": "shell",
+			"options": {
+				"cwd": "G:\\Gaming Apps\\Unreal Engine\\UE_5.2"
+			}
+		},
+		{
+			"label": "OurPlatformerEditor Win64 Development Build",
+			"group": "build",
+			"command": "Engine\\Build\\BatchFiles\\Build.bat",
+			"args": [
+				"OurPlatformerEditor",
+				"Win64",
+				"Development",
+				"G:\\Gaming Apps\\Unreal Engine\\Projects\\3DPlatformer\\OurPlatformer\\OurPlatformer.uproject",
+				"-waitmutex"
+			],
+			"problemMatcher": "$msCompile",
+			"type": "shell",
+			"options": {
+				"cwd": "G:\\Gaming Apps\\Unreal Engine\\UE_5.2"
+			}
+		},
+		{
+			"label": "OurPlatformerEditor Win64 Development Rebuild",
+			"group": "build",
+			"command": "Engine\\Build\\BatchFiles\\Build.bat",
+			"args": [
+				"OurPlatformerEditor",
+				"Win64",
+				"Development",
+				"G:\\Gaming Apps\\Unreal Engine\\Projects\\3DPlatformer\\OurPlatformer\\OurPlatformer.uproject",
+				"-waitmutex"
+			],
+			"problemMatcher": "$msCompile",
+			"dependsOn": [
+				"OurPlatformerEditor Win64 Development Clean"
+			],
+			"type": "shell",
+			"options": {
+				"cwd": "G:\\Gaming Apps\\Unreal Engine\\UE_5.2"
+			}
+		},
+		{
+			"label": "OurPlatformerEditor Win64 Development Clean",
+			"group": "build",
+			"command": "Engine\\Build\\BatchFiles\\Clean.bat",
+			"args": [
+				"OurPlatformerEditor",
+				"Win64",
+				"Development",
+				"G:\\Gaming Apps\\Unreal Engine\\Projects\\3DPlatformer\\OurPlatformer\\OurPlatformer.uproject",
+				"-waitmutex"
+			],
+			"problemMatcher": "$msCompile",
+			"type": "shell",
+			"options": {
+				"cwd": "G:\\Gaming Apps\\Unreal Engine\\UE_5.2"
+			}
+		}
+	]
+}
