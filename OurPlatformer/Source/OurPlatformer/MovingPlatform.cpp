@@ -25,7 +25,7 @@ void AMovingPlatform::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
 
-	MovePlatform(DeltaTime)
+	MovePlatform(DeltaTime);
 
 	RotatePlatform(DeltaTime);
 }
@@ -40,7 +40,11 @@ void AMovingPlatform::MovePlatform(float DeltaTime)
 		// Check if platform should stop
 		if (ShouldPause)
 		{
-			StopPlatform();
+			StopPlatform(UnitVector);
+
+			// Reverse Platform after delay
+			GetWorldTimerManager().SetTimer(ReverseTimerHandle, this, &AMovingPlatform::ReversePlatform, PauseLength, false);
+			return;
 		}
 
 		ReversePlatform();
@@ -49,7 +53,7 @@ void AMovingPlatform::MovePlatform(float DeltaTime)
 	// Move the platform
 	else
 	{
-		FVector CurrentLocation = GetActorLocation()
+		FVector CurrentLocation = GetActorLocation();
 		CurrentLocation += PlatformVelocity * DeltaTime;
 		SetActorLocation(CurrentLocation);
 	}
@@ -65,7 +69,7 @@ void AMovingPlatform::StopPlatform(FVector UnitVector)
 
 	// Save original velocity and stop the platform
 	PreviousVelocity = PlatformVelocity;
-	Platform Velocity *= 0;
+	PlatformVelocity *= 0;
 }
 
 void AMovingPlatform::ReversePlatform()
@@ -76,13 +80,13 @@ void AMovingPlatform::ReversePlatform()
 void AMovingPlatform::RotatePlatform(float DeltaTime)
 {
 	// Rotate platform (frame rate independent)
-	AddActorLocationRotation(RotationVelocity * DeltaTime);
+	AddActorLocalRotation(RotationVelocity * DeltaTime);
 }
 
 bool AMovingPlatform::ShouldPlatformReturn() const
 {
 	// Reverse platform if it passed Distance Traveled threshold
-	return GetDistanceTraveled > TravelDistance;
+	return GetDistanceTraveled() > TravelDistance;
 }
 
 float AMovingPlatform::GetDistanceTraveled() const

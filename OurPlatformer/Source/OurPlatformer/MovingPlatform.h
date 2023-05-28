@@ -30,7 +30,7 @@ private:
 
 	FVector StartLocation;
 
-	FVector PreviousVelocity;
+	FVector PreviousVelocity; // Used to store velocity
 
 	UPROPERTY(EditAnywhere, Category = "Moving Platform")
 	FVector PlatformVelocity = FVector(0, 100, 0);
@@ -43,6 +43,9 @@ private:
 
 	UPROPERTY(EditAnywhere, Category = "Moving Platform")
 	bool ShouldPause = false;
+
+	UPROPERTY(EditAnywhere, Category = "Moving Platform")
+	float PauseLength = 2.0;
 
 	void MovePlatform(float DeltaTime);
 
