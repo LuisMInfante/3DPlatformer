@@ -49,11 +49,13 @@ private:
 
 	void MovePlatform(float DeltaTime);
 
-	void StopPlatform(FVector UnitVector);
+	void StopPlatform();
 
 	void ReversePlatform();
 
 	void RotatePlatform(float DeltaTime);
+
+	void UpdateStartLocation();
 
 	bool ShouldPlatformReturn() const;
 

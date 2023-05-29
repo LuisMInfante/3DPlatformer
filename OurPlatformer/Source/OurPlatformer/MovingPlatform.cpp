@@ -35,18 +35,25 @@ void AMovingPlatform::MovePlatform(float DeltaTime)
 	// Reverse the platform if it crossed distance threshold
 	if(ShouldPlatformReturn())
 	{
-		FVector UnitVector = PlatformVelocity.GetSafeNormal();
+		// Update the new Starting Location
+		UpdateStartLocation();
 
 		// Check if platform should stop
 		if (ShouldPause)
 		{
-			StopPlatform(UnitVector);
+			// Store Previous Velocity
+			PreviousVelocity = PlatformVelocity;
+
+			StopPlatform();
 
 			// Reverse Platform after delay
 			GetWorldTimerManager().SetTimer(ReverseTimerHandle, this, &AMovingPlatform::ReversePlatform, PauseLength, false);
 			return;
 		}
 
+		// Store Previous Velocity
+		PreviousVelocity = PlatformVelocity;
+		
 		ReversePlatform();
 	}
 
@@ -59,21 +66,15 @@ void AMovingPlatform::MovePlatform(float DeltaTime)
 	}
 }
 
-void AMovingPlatform::StopPlatform(FVector UnitVector)
+void AMovingPlatform::StopPlatform()
 {
-	// Set new starting location based on unit vector (Avoids over-shooting)
-	StartLocation += UnitVector * TravelDistance;
-
-	// Set platform to new start location
-	SetActorLocation(StartLocation); 
-
-	// Save original velocity and stop the platform
-	PreviousVelocity = PlatformVelocity;
+	// Stop the platform
 	PlatformVelocity *= 0;
 }
 
 void AMovingPlatform::ReversePlatform()
 {
+	// Reverse the platform
 	PlatformVelocity = -PreviousVelocity;
 }
 
@@ -81,6 +82,19 @@ void AMovingPlatform::RotatePlatform(float DeltaTime)
 {
 	// Rotate platform (frame rate independent)
 	AddActorLocalRotation(RotationVelocity * DeltaTime);
+}
+
+void AMovingPlatform::UpdateStartLocation()
+{
+
+	// Calculate Unit Vector
+	FVector UnitVector = PlatformVelocity.GetSafeNormal();
+
+	// Set new starting location based on unit vector (Avoids over-shooting)
+	StartLocation += UnitVector * TravelDistance;
+
+	// Set platform to new start location
+	SetActorLocation(StartLocation);	
 }
 
 bool AMovingPlatform::ShouldPlatformReturn() const
