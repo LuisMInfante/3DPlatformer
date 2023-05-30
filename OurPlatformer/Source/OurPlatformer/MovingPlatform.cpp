@@ -38,21 +38,18 @@ void AMovingPlatform::MovePlatform(float DeltaTime)
 		// Update the new Starting Location
 		UpdateStartLocation();
 
+		// Store Previous Velocity
+		PreviousVelocity = PlatformVelocity;
+
 		// Check if platform should stop
 		if (ShouldPause)
 		{
-			// Store Previous Velocity
-			PreviousVelocity = PlatformVelocity;
-
 			StopPlatform();
 
 			// Reverse Platform after delay
 			GetWorldTimerManager().SetTimer(ReverseTimerHandle, this, &AMovingPlatform::ReversePlatform, PauseLength, false);
 			return;
 		}
-
-		// Store Previous Velocity
-		PreviousVelocity = PlatformVelocity;
 		
 		ReversePlatform();
 	}
