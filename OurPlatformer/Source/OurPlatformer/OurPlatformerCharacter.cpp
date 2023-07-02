@@ -9,6 +9,8 @@
 #include "GameFramework/SpringArmComponent.h"
 #include "EnhancedInputComponent.h"
 #include "EnhancedInputSubsystems.h"
+#include "OnlineSubsystem.h"
+#include "Interfaces/OnlineSessionInterface.h"
 
 
 //////////////////////////////////////////////////////////////////////////
@@ -49,6 +51,22 @@ AOurPlatformerCharacter::AOurPlatformerCharacter()
 
 	// Note: The skeletal mesh and anim blueprint references on the Mesh component (inherited from Character) 
 	// are set in the derived blueprint asset named ThirdPersonCharacter (to avoid direct content references in C++)
+
+	IOnlineSubsystem* OnlineSubsystem = IOnlineSubsystem::Get();
+	if (OnlineSubsystem)
+	{
+		OnlineSessionInterface = OnlineSubsystem->GetSessionInterface();
+
+		if(GEngine)
+		{
+			GEngine->AddOnScreenDebugMessage(
+				-1, 
+				15.f, 
+				FColor::Cyan, 
+				FString::Printf(TEXT("Found subsystem %s"), *OnlineSubsystem->GetSubsystemName().ToString())
+				);
+		}
+	}
 }
 
 void AOurPlatformerCharacter::BeginPlay()
