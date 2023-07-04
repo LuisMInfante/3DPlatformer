@@ -34,6 +34,18 @@
 			"Type": "RequiredResource"
 		},
 		{
+			"Path": "$(ProjectDir)/Plugins/OnlineMultiplayerSessions/Binaries/Win64/UnrealEditor-OnlineMultiplayerSessions.dll",
+			"Type": "DynamicLibrary"
+		},
+		{
+			"Path": "$(ProjectDir)/Plugins/OnlineMultiplayerSessions/Binaries/Win64/UnrealEditor-OnlineMultiplayerSessions.pdb",
+			"Type": "SymbolFile"
+		},
+		{
+			"Path": "$(ProjectDir)/Plugins/OnlineMultiplayerSessions/Binaries/Win64/UnrealEditor.modules",
+			"Type": "RequiredResource"
+		},
+		{
 			"Path": "$(EngineDir)/Binaries/Win64/AgentInterface.dll",
 			"Type": "RequiredResource"
 		},
@@ -3401,6 +3413,10 @@
 	"RuntimeDependencies": [
 		{
 			"Path": "$(ProjectDir)/OurPlatformer.uproject",
+			"Type": "UFS"
+		},
+		{
+			"Path": "$(ProjectDir)/Plugins/OnlineMultiplayerSessions/OnlineMultiplayerSessions.uplugin",
 			"Type": "UFS"
 		},
 		{

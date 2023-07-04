@@ -79,3 +79,5 @@ DerivedDataCache/*
 /OurPlatformer/DerivedDataCache
 /OurPlatformer/Build
 /OurPlatformer/Binaries
+/OurPlatformer/Plugins/OnlineMultiplayerSessions/Binaries
+/OurPlatformer/Plugins/OnlineMultiplayerSessions/Intermediate
