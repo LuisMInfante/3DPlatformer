@@ -8,6 +8,14 @@
 		"directory": "G:\\Gaming Apps\\Unreal Engine\\UE_5.2\\Engine\\Source"
 	},
 	{
+		"file": "G:\\Gaming Apps\\Unreal Engine\\Projects\\3DPlatformer\\OurPlatformer\\Plugins\\OnlineMultiplayerSessions\\Source\\OnlineMultiplayerSessions\\Private\\Menu.cpp",
+		"arguments": [
+			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.35.32215\\bin\\Hostx64\\x64\\cl.exe",
+			"@G:\\Gaming Apps\\Unreal Engine\\Projects\\3DPlatformer\\OurPlatformer\\.vscode\\compileCommands_Default\\OnlineMultiplayerSessions.31.rsp"
+		],
+		"directory": "G:\\Gaming Apps\\Unreal Engine\\UE_5.2\\Engine\\Source"
+	},
+	{
 		"file": "G:\\Gaming Apps\\Unreal Engine\\Projects\\3DPlatformer\\OurPlatformer\\Plugins\\OnlineMultiplayerSessions\\Source\\OnlineMultiplayerSessions\\Private\\MultiplayerSessionsSubsystem.cpp",
 		"arguments": [
 			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.35.32215\\bin\\Hostx64\\x64\\cl.exe",
@@ -17,6 +25,14 @@
 	},
 	{
 		"file": "G:\\Gaming Apps\\Unreal Engine\\Projects\\3DPlatformer\\OurPlatformer\\Plugins\\OnlineMultiplayerSessions\\Source\\OnlineMultiplayerSessions\\Private\\OnlineMultiplayerSessions.cpp",
+		"arguments": [
+			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.35.32215\\bin\\Hostx64\\x64\\cl.exe",
+			"@G:\\Gaming Apps\\Unreal Engine\\Projects\\3DPlatformer\\OurPlatformer\\.vscode\\compileCommands_Default\\OnlineMultiplayerSessions.31.rsp"
+		],
+		"directory": "G:\\Gaming Apps\\Unreal Engine\\UE_5.2\\Engine\\Source"
+	},
+	{
+		"file": "G:\\Gaming Apps\\Unreal Engine\\Projects\\3DPlatformer\\OurPlatformer\\Plugins\\OnlineMultiplayerSessions\\Source\\OnlineMultiplayerSessions\\Public\\Menu.h",
 		"arguments": [
 			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.35.32215\\bin\\Hostx64\\x64\\cl.exe",
 			"@G:\\Gaming Apps\\Unreal Engine\\Projects\\3DPlatformer\\OurPlatformer\\.vscode\\compileCommands_Default\\OnlineMultiplayerSessions.31.rsp"
