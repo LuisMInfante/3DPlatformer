@@ -10,6 +10,7 @@
  * 
  */
 class UButton;
+class UMultiplayerSessionsSubsystem;
 
 UCLASS()
 class ONLINEMULTIPLAYERSESSIONS_API UMenu : public UUserWidget
@@ -19,11 +20,12 @@ class ONLINEMULTIPLAYERSESSIONS_API UMenu : public UUserWidget
 public:
 
 	UFUNCTION(BlueprintCallable)
-	void MenuSetup();
+	void MenuSetup(int32 NumberOfPublicConnections = 4, FString TypeOfMatch = FString(TEXT("Co-op")));
 
 protected:
 
 	virtual bool Initialize() override;
+	virtual void NativeDestruct() override;
 
 private:
 
@@ -38,4 +40,12 @@ private:
 
 	UFUNCTION()
 	void JoinButtonClicked();
+
+	void ClearMenu();
+
+	// Subsystem for Online Session Functionality 
+	UMultiplayerSessionsSubsystem* MultiplayerSessionsSubsystem;
+
+	int32 NumPublicConnections{4};
+	FString MatchType{TEXT("Co-op")};
 };

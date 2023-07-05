@@ -39,6 +39,7 @@ protected:
 private:
 
 	IOnlineSessionPtr SessionInterface;
+	TSharedPtr<FOnlineSessionSettings> LastCreatedSessionSettings;
 
 	// Delegates to add to Online Session Interface delegate list
 	// Internal Callbacks will be binded to these delegates
