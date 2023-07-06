@@ -10,6 +10,10 @@
 /**
  * 
  */
+
+// Declaring Custom Delegates for Menu Class to bind callbacks
+DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FMultiplayerOnCreateSessionComplete, bool, bWasSuccessful);
+
 UCLASS()
 class ONLINEMULTIPLAYERSESSIONS_API UMultiplayerSessionsSubsystem : public UGameInstanceSubsystem
 {
@@ -26,6 +30,9 @@ public:
 	void StartSession();
 	void DestroySession();
 
+	// Custom Delegates for Menu Class to bind callbacks
+	FMultiplayerOnCreateSessionComplete MultiplayerOnCreateSessionComplete;
+	
 protected:
 
 	// Internal Callback Functions (To be added to Online Session Interface delegate list)
