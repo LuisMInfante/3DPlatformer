@@ -4,6 +4,9 @@
 #include "Menu.h"
 #include "Components/Button.h"
 #include "MultiplayerSessionsSubsystem.h"
+#include "OnlineSessionSettings.h"
+#include "Interfaces/OnlineSessionInterface.h"
+#include "OnlineSubsystem.h"
 
 void UMenu::MenuSetup(int32 NumberOfPublicConnections, FString TypeOfMatch) 
 {
@@ -36,9 +39,14 @@ void UMenu::MenuSetup(int32 NumberOfPublicConnections, FString TypeOfMatch)
         MultiplayerSessionsSubsystem = GameInstance->GetSubsystem<UMultiplayerSessionsSubsystem>();
     }
 
+    // Bind Callbacks to Custom Delegates
     if (MultiplayerSessionsSubsystem)
     {
         MultiplayerSessionsSubsystem->MultiplayerOnCreateSessionComplete.AddDynamic(this, &ThisClass::OnCreateSession);
+        MultiplayerSessionsSubsystem->MultiplayerOnFindSessionsComplete.AddUObject(this, &ThisClass::OnFindSessions);
+        MultiplayerSessionsSubsystem->MultiplayerOnJoinSessionComplete.AddUObject(this, &ThisClass::OnJoinSession);
+        MultiplayerSessionsSubsystem->MultiplayerOnStartSessionComplete.AddDynamic(this, &ThisClass::OnStartSession);
+        MultiplayerSessionsSubsystem->MultiplayerOnDestroySessionComplete.AddDynamic(this, &ThisClass::OnDestroySession);
     }
 }
 
@@ -104,6 +112,61 @@ void UMenu::OnCreateSession(bool bWasSuccessful)
     }
 }
 
+void UMenu::OnFindSessions(const TArray<FOnlineSessionSearchResult>& SessionResults, bool bWasSuccessful) 
+{
+    if (!MultiplayerSessionsSubsystem)
+    {
+        return;
+    }
+
+	// Parse Search Results
+    // * TODO: Refine Selection of Session * 
+    for (auto Result : SessionResults)
+    {
+        FString SessionSettingsValue;
+        Result.Session.SessionSettings.Get(FName("MatchType"), SessionSettingsValue);
+
+        // If the result matches our Matchtype, join that session
+        if (SessionSettingsValue == MatchType)
+        {
+            MultiplayerSessionsSubsystem->JoinSession(Result);
+            return;
+        }
+    }
+
+}
+
+void UMenu::OnJoinSession(EOnJoinSessionCompleteResult::Type Result) 
+{
+	// Get Online subsystem (GameEngine.ini)
+	IOnlineSubsystem* Subsystem = IOnlineSubsystem::Get();
+    if (Subsystem)
+    {
+        IOnlineSessionPtr SessionInterface = Subsystem->GetSessionInterface();
+        if (SessionInterface.IsValid())
+        {
+            FString Address;
+            SessionInterface->GetResolvedConnectString(NAME_GameSession, Address); // Get the Address
+
+            APlayerController* PlayerController = GetGameInstance()->GetFirstLocalPlayerController();
+            if (PlayerController)
+            {
+                PlayerController->ClientTravel(Address, ETravelType::TRAVEL_Absolute); // Travel to that Address
+            }
+        }
+    }
+}
+
+void UMenu::OnStartSession(bool bWasSuccessful) 
+{
+	
+}
+
+void UMenu::OnDestroySession(bool bWasSuccessful) 
+{
+	
+}
+
 void UMenu::HostButtonClicked() 
 {
     if (MultiplayerSessionsSubsystem)
@@ -114,14 +177,9 @@ void UMenu::HostButtonClicked()
 
 void UMenu::JoinButtonClicked() 
 {
-	if (GEngine)
+    if (MultiplayerSessionsSubsystem)
     {
-        GEngine->AddOnScreenDebugMessage(
-            -1,
-            12.f,
-            FColor::Magenta,
-            FString(TEXT("Join Button Clicked."))
-        );
+        MultiplayerSessionsSubsystem->FindSessions(10000);
     }
 }
 
