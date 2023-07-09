@@ -95,7 +95,7 @@ void UMenu::OnCreateSession(bool bWasSuccessful)
         UWorld* World = GetWorld();
         if (World)
         {
-            World->ServerTravel("/Game/ThirdPerson/Maps/Lobby?listen");
+            World->ServerTravel("/Game/ThirdPerson/Maps/Lobby?listen"); // testing for now
         }
     }
     else
@@ -159,7 +159,12 @@ void UMenu::OnJoinSession(EOnJoinSessionCompleteResult::Type Result)
 
 void UMenu::OnStartSession(bool bWasSuccessful) 
 {
-	
+	// Travel to Overworld level after successful creation of session
+    UWorld* World = GetWorld();
+    if (World)
+    {
+        World->ServerTravel("/Game/ThirdPerson/Maps/ThirdPersonMap?listen"); // testing for now
+    }
 }
 
 void UMenu::OnDestroySession(bool bWasSuccessful) 
