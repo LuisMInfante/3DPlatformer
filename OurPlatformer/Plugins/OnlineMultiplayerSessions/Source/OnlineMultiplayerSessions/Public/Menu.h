@@ -21,7 +21,7 @@ class ONLINEMULTIPLAYERSESSIONS_API UMenu : public UUserWidget
 public:
 
 	UFUNCTION(BlueprintCallable)
-	void MenuSetup(int32 NumberOfPublicConnections = 4, FString TypeOfMatch = FString(TEXT("Co-op")));
+	void MenuSetup(int32 NumberOfPublicConnections = 4, FString TypeOfMatch = FString(TEXT("Co-op")), FString LobbyPath = FString(TEXT("/Game/ThirdPerson/Maps/Lobby")));
 
 protected:
 
@@ -59,4 +59,6 @@ private:
 
 	int32 NumPublicConnections{4};
 	FString MatchType{TEXT("Co-op")};
+	FString PathToLobby{TEXT("")};
+	FString PathToGame{TEXT("")};
 };
