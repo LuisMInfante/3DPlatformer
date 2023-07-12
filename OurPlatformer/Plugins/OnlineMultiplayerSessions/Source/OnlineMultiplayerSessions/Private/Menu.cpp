@@ -97,6 +97,14 @@ void UMenu::OnCreateSession(bool bWasSuccessful)
         if (World)
         {
             World->ServerTravel(PathToLobby); // testing for now
+
+            APlayerController* PlayerController = World->GetFirstPlayerController();
+            if (PlayerController)
+            {
+                FInputModeGameOnly InputModeData;
+                PlayerController->SetInputMode(InputModeData);
+                PlayerController->SetShowMouseCursor(false);
+            }
         }
     }
     else
@@ -159,6 +167,9 @@ void UMenu::OnJoinSession(EOnJoinSessionCompleteResult::Type Result)
             if (PlayerController)
             {
                 PlayerController->ClientTravel(Address, ETravelType::TRAVEL_Absolute); // Travel to that Address
+                FInputModeGameOnly InputModeData;
+                PlayerController->SetInputMode(InputModeData);
+                PlayerController->SetShowMouseCursor(false);
             }
         }
     }
@@ -176,6 +187,14 @@ void UMenu::OnStartSession(bool bWasSuccessful)
     if (World)
     {
         World->ServerTravel("/Game/ThirdPerson/Maps/ThirdPersonMap?listen"); // testing for now
+
+        APlayerController* PlayerController = World->GetFirstPlayerController();
+        if (PlayerController)
+        {
+            FInputModeGameOnly InputModeData;
+            PlayerController->SetInputMode(InputModeData);
+            PlayerController->SetShowMouseCursor(false);
+        }
     }
 }
 
@@ -215,15 +234,15 @@ void UMenu::JoinButtonClicked()
 void UMenu::ClearMenu() 
 {
 	RemoveFromParent();
-    UWorld* World = GetWorld();
-    if (World)
-    {
-        APlayerController* PlayerController = World->GetFirstPlayerController();
-        if (PlayerController)
-        {
-            FInputModeGameOnly InputModeData;
-            PlayerController->SetInputMode(InputModeData);
-            PlayerController->SetShowMouseCursor(false);
-        }
-    }
+    // UWorld* World = GetWorld();
+    // if (World)
+    // {
+    //     APlayerController* PlayerController = World->GetFirstPlayerController();
+    //     if (PlayerController)
+    //     {
+    //         FInputModeGameOnly InputModeData;
+    //         PlayerController->SetInputMode(InputModeData);
+    //         PlayerController->SetShowMouseCursor(false);
+    //     }
+    // }
 }
