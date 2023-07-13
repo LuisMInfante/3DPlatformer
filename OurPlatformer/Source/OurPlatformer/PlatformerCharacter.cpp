@@ -102,6 +102,7 @@ void APlatformerCharacter::NotifyJumpApex()
 {
 	// Increase velocity on the way down (from apex)
 	GetCharacterMovement()->GravityScale = FallingGravity; 
+	
 	Super::NotifyJumpApex();
 }
 
