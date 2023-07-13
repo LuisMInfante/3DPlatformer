@@ -17,6 +17,11 @@
 //////////////////////////////////////////////////////////////////////////
 // AOurPlatformerCharacter
 
+/*******************************************************************************
+					***This is the Prototype Character***
+	Only using this for testing some functionality before fully implementing :)
+********************************************************************************/
+
 AOurPlatformerCharacter::AOurPlatformerCharacter():
 	CreateSessionCompleteDelegate(FOnCreateSessionCompleteDelegate::CreateUObject(this, &ThisClass::OnCreateSessionComplete)),
 	FindSessionsCompleteDelegate(FOnFindSessionsCompleteDelegate::CreateUObject(this, &ThisClass::OnFindSessionsComplete)),
@@ -36,11 +41,17 @@ AOurPlatformerCharacter::AOurPlatformerCharacter():
 
 	// Note: For faster iteration times these variables, and many more, can be tweaked in the Character Blueprint
 	// instead of recompiling to adjust them
-	GetCharacterMovement()->JumpZVelocity = 700.f;
+	// GetCharacterMovement()->JumpZVelocity = 700.f;
 	GetCharacterMovement()->AirControl = 0.35f;
 	GetCharacterMovement()->MaxWalkSpeed = 500.f;
 	GetCharacterMovement()->MinAnalogWalkSpeed = 20.f;
 	GetCharacterMovement()->BrakingDecelerationWalking = 2000.f;
+
+	/*********************************/
+			/* Movement */
+	/*********************************/
+	GetCharacterMovement()->GravityScale = 2.8f;
+	GetCharacterMovement()->JumpZVelocity = 1000.f;
 
 	// Create a camera boom (pulls in towards the player if there is a collision)
 	CameraBoom = CreateDefaultSubobject<USpringArmComponent>(TEXT("CameraBoom"));
@@ -144,6 +155,57 @@ void AOurPlatformerCharacter::Look(const FInputActionValue& Value)
 		AddControllerYawInput(LookAxisVector.X);
 		AddControllerPitchInput(LookAxisVector.Y);
 	}
+}
+
+void AOurPlatformerCharacter::AdjustJumpStrength() 
+{
+	switch (JumpCounter)
+	{
+		case 1:
+			GetCharacterMovement()->JumpZVelocity = 1400.f;
+			break;
+		case 2:
+			GetCharacterMovement()->JumpZVelocity = 2000.f;
+			break;
+		default:
+			break;
+	}
+}
+
+void AOurPlatformerCharacter::ResetJumpStrength() 
+{
+	JumpCounter = 0;
+	GetCharacterMovement()->JumpZVelocity = 1000.f;
+}
+
+void AOurPlatformerCharacter::OnJumped_Implementation() 
+{
+	// notified every jump
+	GetCharacterMovement()->bNotifyApex =  true;
+	JumpCounter++;
+	GetWorldTimerManager().ClearTimer(JumpResetTimer);
+
+	Super::OnJumped_Implementation();
+}
+
+void AOurPlatformerCharacter::NotifyJumpApex() 
+{
+	GetCharacterMovement()->GravityScale = 5.f; // Increase velocity on the way down (from apex)
+	Super::NotifyJumpApex();
+}
+
+void AOurPlatformerCharacter::Landed(const FHitResult& Hit) 
+{
+	GetCharacterMovement()->GravityScale = 2.8f;
+	if (JumpCounter > 2)
+	{
+		ResetJumpStrength();
+	}
+
+	AdjustJumpStrength();
+	GetWorldTimerManager().SetTimer(JumpResetTimer, this, &AOurPlatformerCharacter::ResetJumpStrength, 0.2f, false);
+
+	Super::Landed(Hit);
 }
 
 void AOurPlatformerCharacter::CreateGameSession()

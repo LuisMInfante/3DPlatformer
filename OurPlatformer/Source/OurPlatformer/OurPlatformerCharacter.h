@@ -8,6 +8,10 @@
 #include "Interfaces/OnlineSessionInterface.h"
 #include "OurPlatformerCharacter.generated.h"
 
+/*******************************************************************************
+					***This is the Prototype Character***
+	Only using this for testing some functionality before fully implementing :)
+********************************************************************************/
 
 UCLASS(config=Game)
 class AOurPlatformerCharacter : public ACharacter
@@ -49,6 +53,20 @@ protected:
 
 	/** Called for looking input */
 	void Look(const FInputActionValue& Value);
+
+	/* Movement functions */
+
+	void AdjustJumpStrength();
+	void ResetJumpStrength();
+
+	/* Movement variables */
+	FTimerHandle JumpResetTimer;
+	int32 JumpCounter = 0;
+
+	/* Overrides */
+	virtual void OnJumped_Implementation() override; // triggered when character starts jumping
+	virtual void NotifyJumpApex() override;
+	virtual void Landed(const FHitResult& Hit) override;
 			
 
 protected:
