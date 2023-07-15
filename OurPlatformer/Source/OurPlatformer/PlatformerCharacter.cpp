@@ -7,6 +7,7 @@
 #include "EnhancedInputSubsystems.h"
 #include "GameFramework/CharacterMovementComponent.h"
 #include "GameFramework/Controller.h"
+#include "Components/WidgetComponent.h"
 
 // Sets default values
 APlatformerCharacter::APlatformerCharacter()
@@ -21,6 +22,8 @@ APlatformerCharacter::APlatformerCharacter()
 
 	bUseControllerRotationYaw = false;
 
+	OverheadWidget = CreateDefaultSubobject<UWidgetComponent>(TEXT("OverheadWidget"));
+	OverheadWidget->SetupAttachment(RootComponent);
 }
 
 // Called when the game starts or when spawned
