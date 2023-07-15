@@ -17,6 +17,10 @@ APlatformerCharacter::APlatformerCharacter()
 	// Character Movement
 	GetCharacterMovement()->GravityScale = DefaultGravity;
 	GetCharacterMovement()->JumpZVelocity = JumpStrengthLevels[0];
+	GetCharacterMovement()->bOrientRotationToMovement = true;
+
+	bUseControllerRotationYaw = false;
+
 }
 
 // Called when the game starts or when spawned

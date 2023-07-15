@@ -54,7 +54,7 @@ protected:
 	int32 JumpCounter = 0;
 	float DefaultGravity = 2.8f;
 	float FallingGravity = 5.0f;
-	float JumpTimerDelay = 0.2f;
+	float JumpTimerDelay = 0.1f;
 	float JumpStrengthLevels[3] = {1000.f, 1400.f, 2000.f};
 
 
