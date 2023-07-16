@@ -95,6 +95,59 @@ void APlatformerCharacter::ResetJumpStrength()
 	GetCharacterMovement()->JumpZVelocity = JumpStrengthLevels[0];
 }
 
+void APlatformerCharacter::WallJump(FHitResult HitResult) 
+{
+	UE_LOG(LogTemp, Display, TEXT("Wall Jumped"));
+	DrawDebugSphere(GetWorld(), HitResult.ImpactPoint, 10.f, 12, FColor::Red, false, 5.f);
+
+    // Calculate the wall jump direction by reflecting the character's forward vector around the wall's normal.
+    FVector WallNormal = HitResult.Normal;
+    FVector CharacterForward = GetActorForwardVector();
+    FVector WallJumpDirection = FVector::VectorPlaneProject(CharacterForward, WallNormal) - CharacterForward;
+
+	// Debug: Draw the vector plane (the projected vector) as a green line.
+    DrawDebugLine(GetWorld(), GetActorLocation(), GetActorLocation() + FVector::VectorPlaneProject(CharacterForward, WallNormal) * 100.0f, FColor::Green, false, 5.0f);
+
+    // Debug: Draw the reflected vector as a blue line.
+    DrawDebugLine(GetWorld(), GetActorLocation(), GetActorLocation() + FVector::VectorPlaneProject(CharacterForward, WallNormal) - CharacterForward * 100.0f, FColor::Blue, false, 5.0f);
+
+    // Set the character's velocity to achieve a consistent upward velocity for the wall jump.
+    float WallJumpVelocity = 1000.0f; 
+    FVector NewVelocity = WallJumpDirection.GetSafeNormal() * WallJumpVelocity;
+    NewVelocity.Z = WallJumpVelocity + 100.f; // Set the upward velocity to WallJumpVelocity + a lil more.
+
+    // Set the character's velocity directly.
+    GetCharacterMovement()->Velocity = NewVelocity;
+
+	// Rotate the character 180 degrees after the wall jump.
+    FRotator CurrentRotation = GetActorRotation();
+    FRotator TargetRotation = CurrentRotation + FRotator(0.0f, 180.0f, 0.0f);
+    SetActorRotation(TargetRotation);
+}
+
+void APlatformerCharacter::Jump() 
+{
+    // Perform a line trace to check if the character is touching a wall while jumping.
+    FVector Start = GetActorLocation();
+    FVector Direction = GetActorForwardVector(); // Check if character is facing a wall
+    float TraceLength = 50.0f;
+    FVector End = Start + Direction * TraceLength;
+
+    FHitResult HitResult;
+    FCollisionQueryParams Params;
+    Params.AddIgnoredActor(this); // Ignore the character itself in the line trace
+
+    // If the line trace hits a wall and the character is falling, execute the wall jump.
+    if (GetWorld()->LineTraceSingleByChannel(HitResult, Start, End, ECC_WorldStatic, Params) && GetCharacterMovement()->IsFalling())
+    {
+		WallJump(HitResult); 
+        return; // Exit the Jump function to prevent regular jumping behavior.
+    }
+	
+    // Do a regular jump if not wall jumping
+	Super::Jump();
+}
+
 void APlatformerCharacter::OnJumped_Implementation() 
 {
 	// notified every jump
@@ -148,8 +201,8 @@ void APlatformerCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInpu
 		Input->BindAction(LookAction, ETriggerEvent::Triggered, this, &APlatformerCharacter::Look);
 
 		// Jumping
-		Input->BindAction(JumpAction, ETriggerEvent::Started, this, &ACharacter::Jump);
-		Input->BindAction(JumpAction, ETriggerEvent::Completed, this, &ACharacter::StopJumping);
+		Input->BindAction(JumpAction, ETriggerEvent::Started, this, &APlatformerCharacter::Jump);
+		// Input->BindAction(JumpAction, ETriggerEvent::Completed, this, &ACharacter::StopJumping);
 	}
 
 }

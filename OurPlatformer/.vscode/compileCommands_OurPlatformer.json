@@ -56,6 +56,38 @@
 		"directory": "G:\\Gaming Apps\\Unreal Engine\\UE_5.2\\Engine\\Source"
 	},
 	{
+		"file": "G:\\Gaming Apps\\Unreal Engine\\Projects\\3DPlatformer\\OurPlatformer\\Source\\OurPlatformer\\GameMode\\LobbyGameMode.cpp",
+		"arguments": [
+			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.35.32215\\bin\\Hostx64\\x64\\cl.exe",
+			"@G:\\Gaming Apps\\Unreal Engine\\Projects\\3DPlatformer\\OurPlatformer\\.vscode\\compileCommands_OurPlatformer\\OurPlatformer.264.rsp"
+		],
+		"directory": "G:\\Gaming Apps\\Unreal Engine\\UE_5.2\\Engine\\Source"
+	},
+	{
+		"file": "G:\\Gaming Apps\\Unreal Engine\\Projects\\3DPlatformer\\OurPlatformer\\Source\\OurPlatformer\\GameMode\\LobbyGameMode.h",
+		"arguments": [
+			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.35.32215\\bin\\Hostx64\\x64\\cl.exe",
+			"@G:\\Gaming Apps\\Unreal Engine\\Projects\\3DPlatformer\\OurPlatformer\\.vscode\\compileCommands_OurPlatformer\\OurPlatformer.264.rsp"
+		],
+		"directory": "G:\\Gaming Apps\\Unreal Engine\\UE_5.2\\Engine\\Source"
+	},
+	{
+		"file": "G:\\Gaming Apps\\Unreal Engine\\Projects\\3DPlatformer\\OurPlatformer\\Source\\OurPlatformer\\HUD\\OverheadWidget.cpp",
+		"arguments": [
+			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.35.32215\\bin\\Hostx64\\x64\\cl.exe",
+			"@G:\\Gaming Apps\\Unreal Engine\\Projects\\3DPlatformer\\OurPlatformer\\.vscode\\compileCommands_OurPlatformer\\OurPlatformer.264.rsp"
+		],
+		"directory": "G:\\Gaming Apps\\Unreal Engine\\UE_5.2\\Engine\\Source"
+	},
+	{
+		"file": "G:\\Gaming Apps\\Unreal Engine\\Projects\\3DPlatformer\\OurPlatformer\\Source\\OurPlatformer\\HUD\\OverheadWidget.h",
+		"arguments": [
+			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.35.32215\\bin\\Hostx64\\x64\\cl.exe",
+			"@G:\\Gaming Apps\\Unreal Engine\\Projects\\3DPlatformer\\OurPlatformer\\.vscode\\compileCommands_OurPlatformer\\OurPlatformer.264.rsp"
+		],
+		"directory": "G:\\Gaming Apps\\Unreal Engine\\UE_5.2\\Engine\\Source"
+	},
+	{
 		"file": "G:\\Gaming Apps\\Unreal Engine\\Projects\\3DPlatformer\\OurPlatformer\\Source\\OurPlatformer\\MovingPlatform.cpp",
 		"arguments": [
 			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.35.32215\\bin\\Hostx64\\x64\\cl.exe",
@@ -121,6 +153,54 @@
 	},
 	{
 		"file": "G:\\Gaming Apps\\Unreal Engine\\Projects\\3DPlatformer\\OurPlatformer\\Source\\OurPlatformer\\OurPlatformerGameMode.h",
+		"arguments": [
+			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.35.32215\\bin\\Hostx64\\x64\\cl.exe",
+			"@G:\\Gaming Apps\\Unreal Engine\\Projects\\3DPlatformer\\OurPlatformer\\.vscode\\compileCommands_OurPlatformer\\OurPlatformer.264.rsp"
+		],
+		"directory": "G:\\Gaming Apps\\Unreal Engine\\UE_5.2\\Engine\\Source"
+	},
+	{
+		"file": "G:\\Gaming Apps\\Unreal Engine\\Projects\\3DPlatformer\\OurPlatformer\\Source\\OurPlatformer\\OurPlatformerGameModeBase.cpp",
+		"arguments": [
+			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.35.32215\\bin\\Hostx64\\x64\\cl.exe",
+			"@G:\\Gaming Apps\\Unreal Engine\\Projects\\3DPlatformer\\OurPlatformer\\.vscode\\compileCommands_OurPlatformer\\OurPlatformer.264.rsp"
+		],
+		"directory": "G:\\Gaming Apps\\Unreal Engine\\UE_5.2\\Engine\\Source"
+	},
+	{
+		"file": "G:\\Gaming Apps\\Unreal Engine\\Projects\\3DPlatformer\\OurPlatformer\\Source\\OurPlatformer\\OurPlatformerGameModeBase.h",
+		"arguments": [
+			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.35.32215\\bin\\Hostx64\\x64\\cl.exe",
+			"@G:\\Gaming Apps\\Unreal Engine\\Projects\\3DPlatformer\\OurPlatformer\\.vscode\\compileCommands_OurPlatformer\\OurPlatformer.264.rsp"
+		],
+		"directory": "G:\\Gaming Apps\\Unreal Engine\\UE_5.2\\Engine\\Source"
+	},
+	{
+		"file": "G:\\Gaming Apps\\Unreal Engine\\Projects\\3DPlatformer\\OurPlatformer\\Source\\OurPlatformer\\PlatformerAnimInstance.cpp",
+		"arguments": [
+			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.35.32215\\bin\\Hostx64\\x64\\cl.exe",
+			"@G:\\Gaming Apps\\Unreal Engine\\Projects\\3DPlatformer\\OurPlatformer\\.vscode\\compileCommands_OurPlatformer\\OurPlatformer.264.rsp"
+		],
+		"directory": "G:\\Gaming Apps\\Unreal Engine\\UE_5.2\\Engine\\Source"
+	},
+	{
+		"file": "G:\\Gaming Apps\\Unreal Engine\\Projects\\3DPlatformer\\OurPlatformer\\Source\\OurPlatformer\\PlatformerAnimInstance.h",
+		"arguments": [
+			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.35.32215\\bin\\Hostx64\\x64\\cl.exe",
+			"@G:\\Gaming Apps\\Unreal Engine\\Projects\\3DPlatformer\\OurPlatformer\\.vscode\\compileCommands_OurPlatformer\\OurPlatformer.264.rsp"
+		],
+		"directory": "G:\\Gaming Apps\\Unreal Engine\\UE_5.2\\Engine\\Source"
+	},
+	{
+		"file": "G:\\Gaming Apps\\Unreal Engine\\Projects\\3DPlatformer\\OurPlatformer\\Source\\OurPlatformer\\PlatformerCharacter.cpp",
+		"arguments": [
+			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.35.32215\\bin\\Hostx64\\x64\\cl.exe",
+			"@G:\\Gaming Apps\\Unreal Engine\\Projects\\3DPlatformer\\OurPlatformer\\.vscode\\compileCommands_OurPlatformer\\OurPlatformer.264.rsp"
+		],
+		"directory": "G:\\Gaming Apps\\Unreal Engine\\UE_5.2\\Engine\\Source"
+	},
+	{
+		"file": "G:\\Gaming Apps\\Unreal Engine\\Projects\\3DPlatformer\\OurPlatformer\\Source\\OurPlatformer\\PlatformerCharacter.h",
 		"arguments": [
 			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.35.32215\\bin\\Hostx64\\x64\\cl.exe",
 			"@G:\\Gaming Apps\\Unreal Engine\\Projects\\3DPlatformer\\OurPlatformer\\.vscode\\compileCommands_OurPlatformer\\OurPlatformer.264.rsp"

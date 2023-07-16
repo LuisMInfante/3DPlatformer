@@ -23,6 +23,9 @@ public:
 
 	UFUNCTION(BlueprintCallable)
 	void ShowPlayerNetworkRole(APawn* InPawn);
+	
+	UFUNCTION(BlueprintCallable)
+	void ShowPlayerName(APawn* InPawn);
 
 protected:
 

@@ -183,19 +183,20 @@ void UMenu::OnJoinSession(EOnJoinSessionCompleteResult::Type Result)
 void UMenu::OnStartSession(bool bWasSuccessful) 
 {
 	// Travel to Overworld level after successful creation of session
-    UWorld* World = GetWorld();
-    if (World)
-    {
-        World->ServerTravel("/Game/ThirdPerson/Maps/ThirdPersonMap?listen"); // testing for now
+    
+    // UWorld* World = GetWorld();
+    // if (World)
+    // {
+    //     World->ServerTravel("/Game/Maps/PlatformerMapTest?listen"); // testing for now
 
-        APlayerController* PlayerController = World->GetFirstPlayerController();
-        if (PlayerController)
-        {
-            FInputModeGameOnly InputModeData;
-            PlayerController->SetInputMode(InputModeData);
-            PlayerController->SetShowMouseCursor(false);
-        }
-    }
+    //     APlayerController* PlayerController = World->GetFirstPlayerController();
+    //     if (PlayerController)
+    //     {
+    //         FInputModeGameOnly InputModeData;
+    //         PlayerController->SetInputMode(InputModeData);
+    //         PlayerController->SetShowMouseCursor(false);
+    //     }
+    // }
 }
 
 void UMenu::OnDestroySession(bool bWasSuccessful) 

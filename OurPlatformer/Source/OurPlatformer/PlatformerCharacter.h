@@ -44,12 +44,20 @@ protected:
 	void AdjustJumpStrength();
 	void ResetJumpStrength();
 
+	void WallJump(FHitResult HitResult);
+
 	// Overrides
+	virtual void Jump() override;
 	virtual void OnJumped_Implementation() override; // called when character starts jumping
 	virtual void NotifyJumpApex() override; // Called when character reaches apex of jump
 	virtual void Landed(const FHitResult& Hit) override; // Called when character lands (triggers OnLanded)
 
-	// Movement variables
+	/* Movement variables */ 
+
+	// Wall Jump
+	uint8 bIsOnWall:1; // uses 1 bit (behaves like boolean but saves memory)
+
+	// Triple Jump 
 	FTimerHandle JumpResetTimer;
 	int32 JumpCounter = 0;
 	float DefaultGravity = 2.8f;
