@@ -56,6 +56,22 @@
 		"directory": "G:\\Gaming Apps\\Unreal Engine\\UE_5.2\\Engine\\Source"
 	},
 	{
+		"file": "G:\\Gaming Apps\\Unreal Engine\\Projects\\3DPlatformer\\OurPlatformer\\Source\\OurPlatformer\\Coin.cpp",
+		"arguments": [
+			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.35.32215\\bin\\Hostx64\\x64\\cl.exe",
+			"@G:\\Gaming Apps\\Unreal Engine\\Projects\\3DPlatformer\\OurPlatformer\\.vscode\\compileCommands_Default\\OurPlatformer.264.rsp"
+		],
+		"directory": "G:\\Gaming Apps\\Unreal Engine\\UE_5.2\\Engine\\Source"
+	},
+	{
+		"file": "G:\\Gaming Apps\\Unreal Engine\\Projects\\3DPlatformer\\OurPlatformer\\Source\\OurPlatformer\\Coin.h",
+		"arguments": [
+			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.35.32215\\bin\\Hostx64\\x64\\cl.exe",
+			"@G:\\Gaming Apps\\Unreal Engine\\Projects\\3DPlatformer\\OurPlatformer\\.vscode\\compileCommands_Default\\OurPlatformer.264.rsp"
+		],
+		"directory": "G:\\Gaming Apps\\Unreal Engine\\UE_5.2\\Engine\\Source"
+	},
+	{
 		"file": "G:\\Gaming Apps\\Unreal Engine\\Projects\\3DPlatformer\\OurPlatformer\\Source\\OurPlatformer\\GameMode\\LobbyGameMode.cpp",
 		"arguments": [
 			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.35.32215\\bin\\Hostx64\\x64\\cl.exe",

@@ -9,5 +9,6 @@ public class OurPlatformer : ModuleRules
 		PCHUsage = PCHUsageMode.UseExplicitOrSharedPCHs;
 
 		PublicDependencyModuleNames.AddRange(new string[] { "Core", "CoreUObject", "Engine", "InputCore", "HeadMountedDisplay", "EnhancedInput", "OnlineSubsystemSteam", "OnlineSubsystem" });
+		PrivateDependencyModuleNames.AddRange(new string[] { "Niagara" });
 	}
 }

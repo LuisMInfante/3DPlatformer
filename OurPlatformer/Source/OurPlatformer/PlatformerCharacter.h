@@ -54,6 +54,8 @@ protected:
 
 	/* Movement variables */ 
 
+	// Walk/Run acceleration/deceleration 
+
 	// Wall Jump
 	uint8 bIsOnWall:1; // uses 1 bit (behaves like boolean but saves memory)
 
@@ -65,6 +67,7 @@ protected:
 	float JumpTimerDelay = 0.1f;
 	float JumpStrengthLevels[3] = {1000.f, 1400.f, 2000.f};
 
+	/* Inventory */
 
 public:	
 	// Called every frame
